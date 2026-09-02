@@ -1,8 +1,9 @@
 # Niranjan S — portfolio
 
 A data-analyst portfolio. React + Vite, plain JavaScript, no UI framework and no
-component library. The charts are hand-written SVG, so there is no charting
-dependency to keep up to date.
+component library — the only runtime dependencies are React and Three.js.
+
+Live: https://niranjan-sportfolio.vercel.app
 
 ## Run it
 
@@ -20,7 +21,7 @@ Node 18 or newer.
 public/Niranjan_S_Resume.pdf   the file every Download button serves
 src/data/content.js            ALL copy and data — edit this, not the components
 src/styles.css                 the whole design system (CSS custom properties)
-src/components/                sections and charts
+src/components/                sections, the scene and the palette
 ```
 
 **To update anything on the page, edit `src/data/content.js`.** Projects, skills,
@@ -62,8 +63,13 @@ the top of that file — nothing else references raw colours.
 
 ## Deploying
 
-Any static host. On Vercel or Netlify: build command `npm run build`, output
-directory `dist`. No environment variables, no server.
+Any static host — the build is a folder of files with no server and no environment
+variables. On Vercel or Netlify: build command `npm run build`, output directory
+`dist`.
+
+Three.js is the bulk of the bundle (~188 kB gzipped) and it loads on every page
+because the scene is site-wide. Text and layout paint first; the field fades in
+after.
 
 ## Accessibility notes
 
