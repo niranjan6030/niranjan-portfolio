@@ -49,7 +49,7 @@ export default function Work() {
           <div className="sec-head">
             <span className="sec-num">01</span>
             <h2 className="sec-title">Selected work</h2>
-            <p className="sec-note">Four projects, all shipped.</p>
+            <p className="sec-note">{projects.length} projects, all shipped.</p>
           </div>
         </Reveal>
 

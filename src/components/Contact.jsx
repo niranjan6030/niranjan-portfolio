@@ -25,7 +25,7 @@ export default function Contact() {
             <div>
               <h3 className="cta-h">Hiring for a data role?</h3>
               <p className="cta-p">
-                The résumé is one page and covers the same four projects in detail — the models,
+                The résumé is one page and covers this work in detail — the models,
                 the validation and the SQL behind each of them. Take it with you.
               </p>
             </div>
