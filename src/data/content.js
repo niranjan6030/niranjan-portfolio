@@ -8,17 +8,47 @@ export const profile = {
   github: "https://github.com/niranjan6030",
   resume: "/Niranjan_S_Resume.pdf",
   lede:
-    "I work in SQL and Python on operational data — demand forecasts, wait-time models, an auditable stock ledger, and the reporting read off them. Four projects, all shipped.",
+    "I work in SQL and Python on operational data — demand forecasts, wait-time models, an auditable stock ledger, and a causal study of state EV subsidies. Five projects, all shipped.",
 };
 
 export const stats = [
   { k: "Works in", v: "SQL · Python · Power BI" },
-  { k: "Shipped", v: "4 projects" },
+  { k: "Shipped", v: "5 projects" },
   { k: "Model", v: "EWMA, walk-forward validated" },
   { k: "Available", v: "Internships & graduate roles" },
 ];
 
 export const projects = [
+  {
+    id: "ev-policy-impact",
+    name: "EV Policy Impact",
+    tagline: "Causal study of India's state EV subsidies",
+    period: "Sep 2026 — Present",
+    role: "Solo build",
+    stack: ["Python", "pandas", "NumPy", "Causal inference"],
+    repo: "https://github.com/niranjan6030/ev-policy-impact",
+    accent: "indigo",
+    problem:
+      "Every Indian state rolled out its own EV policy at a different time, which makes a natural experiment. The registrations are public — but behind a dashboard with no API, and the answer turns entirely on getting the treatment dates right.",
+    points: [
+      {
+        h: "Extraction with a guardrail",
+        d: "Vahan is a JSF application, not an API: a rotating ViewState token, cascading filters and a paginated grid. Sending the fuel filter to the wrong button returns unfiltered totals that look plausible and are thirteen times too large, so the extractor refuses to run unless filtering demonstrably changes the numbers.",
+      },
+      {
+        h: "Staggered difference-in-differences",
+        d: "Callaway–Sant'Anna across 19 states and 15 treatment cohorts on a 2015–2025 monthly panel, using not-yet-treated controls and a bootstrap that resamples whole states. Two-way fixed effects is avoided deliberately: under staggered adoption it uses already-treated units as controls.",
+      },
+      {
+        h: "Treatment dates verified against gazettes",
+        d: "The policy dates drive the entire estimate, so each was checked against its notification rather than a secondary summary. OCR of two scanned gazettes corrected dates that every secondary source had wrong — by five months and by seven.",
+      },
+      {
+        h: "One estimate defended, two rejected",
+        d: "Cars: +0.19pp on a 0.07% baseline at 24 months, flat pre-trend, most of it surviving a pre-trend adjustment. Two-wheelers: swamped by a national subsidy that moved the share 2.5x in a single month. Three-wheelers: the naive estimate is significant and backwards, because they electrified before the policies existed.",
+      },
+    ],
+  },
   {
     id: "smart-cafeteria",
     name: "Smart Cafeteria",
@@ -152,11 +182,14 @@ export const skills = [
       "Time-series forecasting", "Exponential smoothing (EWMA)", "Trend analysis",
       "Walk-forward validation", "Error benchmarking (MAE)", "Distribution analysis",
       "Queueing theory (M/M/c)", "Demand analysis", "Recommender systems",
+      "Causal inference", "Difference-in-differences", "Synthetic control",
+      "Event study design", "Panel data", "Bootstrap inference", "Parallel-trends diagnostics",
     ],
   },
   {
     group: "Programming & Tools",
-    items: ["Python", "pandas", "PyTorch", "JavaScript", "Java", "C++", "ETL pipelines", "Git", "GitHub", "Vercel"],
+    items: ["Python", "pandas", "NumPy", "PyTorch", "JavaScript", "Java", "C++",
+      "ETL pipelines", "Web scraping", "OCR", "Git", "GitHub", "Vercel"],
   },
 ];
 
